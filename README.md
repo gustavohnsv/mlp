@@ -19,12 +19,15 @@ make clean  # Limpa todos os arquivos
 ./mlp_program <filename> <output_layer_size> <hidden_layer_size> <learning_rate> <epochs>
 ```
 
+- During the program execution, you can input data for the model to make predictions. Give it a try!
+
 ## Repo tree
 ```bash
 .
 ├── data.csv
 ├── LICENSE
 ├── main.cpp
+├── main.h
 ├── Makefile
 ├── README.md
 ├── src
