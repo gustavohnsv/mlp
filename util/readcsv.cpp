@@ -1,10 +1,4 @@
 #include "readcsv.h"
-#include <fstream>
-#include <sstream>
-#include <iostream>
-
-#define ORANGE "\033[38;5;214m"
-#define RESET "\033[0m"
 
 ReadCSV::ReadCSV(const std::string &filename, char delimiter): filename(filename), delimiter(delimiter) {
     this->data = Datasets();

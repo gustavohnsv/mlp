@@ -1,5 +1,4 @@
 #include "params.h"
-#include <stdexcept>
 
 Params::Params(int size) : y(0), size(size) {
     this->x = std::vector<double>(size);

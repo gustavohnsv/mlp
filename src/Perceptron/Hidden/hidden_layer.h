@@ -1,7 +1,11 @@
 #ifndef H_LAYER_H
 #define H_LAYER_H
 
+#include <cmath>
 #include <vector>
+#include <stdexcept>
+
+#include "../Output/output_layer.h"
 #include "../../Datasets/Parameters/params.h"
 #include "../../Datasets/datasets.h"
 #include "../BasePerceptron/perceptron.h"

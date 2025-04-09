@@ -2,6 +2,7 @@
 #define PERCEPTRON_H
 
 #include <vector>
+#include <stdexcept>
 
 class Perceptron {
     private:

@@ -1,7 +1,4 @@
 #include "hidden_layer.h"
-#include "../Output/output_layer.h"
-#include <cmath>
-#include <stdexcept>
 
 H_layer::H_layer(double learning_rate, int size, int size_conn, int size_weights) 
     : learning_rate(learning_rate), size_conn(size_conn), size_weights(size_weights) {

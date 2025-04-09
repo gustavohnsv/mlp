@@ -1,10 +1,4 @@
 #include "mlp.h"
-#include <vector>
-#include <math.h>
-#include <iostream>
-
-#define YELLOW "\033[33m"
-#define RESET "\033[0m"
 
 MLP::MLP(Datasets data, int output_size, int hidden_size, double learning_rate) : 
     data(data), 

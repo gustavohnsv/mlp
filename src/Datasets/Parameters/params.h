@@ -2,6 +2,7 @@
 #define PARAMS_H
 
 #include <vector>
+#include <stdexcept>
 
 class Params {
     private:

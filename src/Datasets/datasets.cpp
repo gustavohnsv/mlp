@@ -1,7 +1,4 @@
 #include "datasets.h"
-#include <vector>
-#include <stdexcept>
-#include <cmath>
 
 Datasets::Datasets(int size, int size_params) : size(size), size_params(size_params) {
     this->params.reserve(size);

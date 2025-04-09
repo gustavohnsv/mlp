@@ -1,6 +1,10 @@
 #ifndef DATASETS_H
 #define DATASETS_H
 
+#include <cmath>
+#include <vector>
+#include <stdexcept>
+
 #include "./Parameters/params.h"
 
 class Datasets {

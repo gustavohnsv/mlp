@@ -1,5 +1,4 @@
 #include "perceptron.h"
-#include <stdexcept>
 
 Perceptron::Perceptron(int conn, int size_w) : weights(size_w, 0.0), bias(0), conn(conn) {}
 

@@ -1,8 +1,15 @@
 #ifndef MLP_H
 #define MLP_H
 
+#include <vector>
+#include <math.h>
+#include <iostream>
+
 #include "./Output/output_layer.h"
 #include "./Hidden/hidden_layer.h"
+
+#define YELLOW "\033[33m"
+#define RESET "\033[0m"
 
 class MLP {
     private:

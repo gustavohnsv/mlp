@@ -1,9 +1,16 @@
 #ifndef READCSV_H
 #define READCSV_H
 
-#include "../src/Datasets/datasets.h"
 #include <vector>
 #include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
+
+#include "../src/Datasets/datasets.h"
+
+#define ORANGE "\033[38;5;214m"
+#define RESET "\033[0m"
 
 class ReadCSV {
     private:
