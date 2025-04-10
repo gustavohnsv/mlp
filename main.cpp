@@ -1,12 +1,14 @@
 #include "main.h"
 
-void showResults(std::string filename, int output_layer_size, int hidden_layer_size, double learning_rate, int epochs, MLP mlp, Datasets data) {
+void showResults(int size, int size_p, int size_c, std::string filename, int output_layer_size, int hidden_layer_size, double learning_rate, int epochs, MLP mlp, Datasets data) {
     std::cout << GREEN << "[main.cpp] " << RESET;
     std::cout << "Filename: " << filename << std::endl;
     std::cout << GREEN << "[main.cpp] " << RESET;
-    std::cout << "Number of samples: " << data.getSize() << std::endl;
+    std::cout << "Number of samples: " << size << std::endl;
     std::cout << GREEN << "[main.cpp] " << RESET;
-    std::cout << "Number of features: " << data.getSizeParams() << std::endl;
+    std::cout << "Number of features: " << size_p << std::endl;
+    std::cout << GREEN << "[main.cpp] " << RESET;
+    std::cout << "Number of classes: " << size_c << std::endl;
     std::cout << GREEN << "[main.cpp] " << RESET;
     std::cout << "Hidden layer size: " << hidden_layer_size << std::endl;
     std::cout << GREEN << "[main.cpp] " << RESET;
@@ -31,25 +33,27 @@ int randomIntNumber(int init, int end) {
 
 int main(int argc, char* argv[]) {
 
-    if (argc < 6) {
-        std::cerr << "Usage: " << argv[0] << " <csv_file> <output_layer_size> <hidden_layer_size> <learning_rate> <epochs>" << std::endl;
+    if (argc < 5) {
+        std::cerr << "Usage: " << argv[0] << " <csv_file> <hidden_layer_size> <learning_rate> <epochs>" << std::endl;
         return 1;
     }
     std::string filename = argv[1];
-    int output_layer_size = std::stoi(argv[2]);
-    int hidden_layer_size = std::stoi(argv[3]);
-    double learning_rate = std::stod(argv[4]);
-    int epochs = std::stoi(argv[5]);
+    int hidden_layer_size = std::stoi(argv[2]);
+    double learning_rate = std::stod(argv[3]);
+    int epochs = std::stoi(argv[4]);
 
     ReadCSV readcsv = ReadCSV(filename);
     readcsv.readData();
 
     Datasets data = readcsv.getData();
-    readcsv.getColumns();
+    int size = data.getSize();
+    int size_params = data.getSizeParams();
+    int n_classes = readcsv.getNumberOfClasses();
+    // readcsv.getColumns();
 
     data.standardize();
     
-    MLP mlp(data, output_layer_size, hidden_layer_size, learning_rate);
+    MLP mlp(data, n_classes, hidden_layer_size, learning_rate);
     mlp.init();
     mlp.train(epochs);
     
@@ -69,7 +73,7 @@ int main(int argc, char* argv[]) {
     std::cout << GREEN << "[main.cpp] " << RESET;
     std::cout << "Expected class: " << data.getUniqueParams(test_index).getY() << RESET << std::endl;
 
-    showResults(filename, output_layer_size, hidden_layer_size, learning_rate, epochs, mlp, data);    
+    showResults(size, size_params, n_classes, filename, n_classes, hidden_layer_size, learning_rate, epochs, mlp, data);    
 
     while (true) {
         std::cout << GREEN << "[main.cpp] " << RESET;

@@ -87,3 +87,11 @@ void ReadCSV::getColumns() {
     }
     std::cout << "]" << std::endl;
 }
+
+int ReadCSV::getNumberOfClasses() {
+    std::set<int> unique_labels;
+    for (int i = 0; i < this->data.getSize(); i++) {
+        unique_labels.insert(this->data.getUniqueParams(i).getY());
+    }
+    return unique_labels.size();
+}

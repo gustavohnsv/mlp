@@ -16,7 +16,7 @@ make clean  # Limpa todos os arquivos
 - Remember that the number of neurons in the output layer must be equal to the number of distinct classes in the dataset!
 
 ```bash
-./mlp_program <filename> <output_layer_size> <hidden_layer_size> <learning_rate> <epochs>
+./mlp_program <filename> <hidden_layer_size> <learning_rate> <epochs>
 ```
 
 - During the program execution, you can input data for the model to make predictions. Give it a try!

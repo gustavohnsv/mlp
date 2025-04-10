@@ -1,6 +1,7 @@
 #ifndef READCSV_H
 #define READCSV_H
 
+#include <set>
 #include <vector>
 #include <string>
 #include <fstream>
